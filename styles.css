@@ -1,0 +1,140 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-rows: 10vh minmax(80vh, auto);
+    grid-template-columns: 20vw 80vw;
+}
+
+/* Header */
+header {
+    background-color: #02021E;
+    color: whitesmoke;
+    padding: 20px;
+    display: flex;
+    grid-column: 1 / span 2;
+    grid-row: 1;
+}
+
+h1 {
+    margin: 0;
+}
+
+img {
+    height: 50px;
+    margin-right: 5px;
+    margin-top: -10px;
+}
+
+/* Sidebar */
+aside {
+    background-color: darkgray;
+    grid-column: 1;
+    grid-row: 2;
+    padding: 15px;
+}
+
+li {
+    list-style-type: none;
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+aside li:hover {
+    background-color: lightblue;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+/* Main */
+main {
+    background-color: lightgray;
+    grid-column: 2;
+    grid-row: 2;
+    padding: 20px;
+}
+
+button {
+    background-color: #02021E;
+    color: whitesmoke;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+#outline {
+    margin-top: 20px;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: aliceblue;
+}
+
+/*home section*/
+#contactFilter {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+#contactFilter ul {
+    list-style: none;
+    margin: 0 20px;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#contactFilter ul li a {
+    text-decoration: none;
+    height: 25px;
+}
+
+#contactFilter ul li a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+    color: blue
+}
+
+/* New Contact Section */
+section[id="newContact"] select,
+section[id="newContact"] input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 0 10% 15px 0;
+    width: 20%;
+    display: inline-block;
+}
+
+section[id="newContact"] label {
+    font-weight: bold;
+    width: 15%;
+    height: 30px;
+    display: inline-block;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+thead {
+    background-color: #6d6dda;
+    color: whitesmoke;
+}
+
+th,
+td {
+    padding: 10px;
+    border: 1px solid #02021E;
+    text-align: left;
+}
