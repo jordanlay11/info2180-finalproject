@@ -52,7 +52,7 @@ CREATE TABLE Notes (
 
 
 -- Initial Admin User Insertion
--- The password 'password123' must be hashed using a function like PHP's password_hash()
--- The hash below is a placeholder sentence i wrote. it must be replaced with actual, securely generated hash.
+-- Insert the default admin user (email: admin@project2.com, password:password123)
+-- The password field contains the Argon2id hash generated from your PHP script.
 INSERT INTO Users (firstname, lastname, password, email, role, created_at) VALUES
-('Admin', 'User', 'replace with generated hash from php code before ruinning script', 'admin@project2.com', 'Admin', NOW());
+('Admin', 'User', '$argon2id$v=19$m=65536,t=4,p=3$d05HdVlLODM1MEpuR0d1SA$8fzbKhMjtI+wMQLzfS15UPdLzyINTqml2FN9amuZZnQ', 'admin@project2.com', 'Admin', NOW());
