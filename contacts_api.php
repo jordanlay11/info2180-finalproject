@@ -8,8 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'GET' && $_SERVER['REQUEST_METHOD'] !== 'POST
     sendJsonResponse(['success' => false, 'message' => 'Method not allowed'], 405);
 }
 
-// For now, assume we are logged in as admin with id 1 (so you can test)
-// Later, this will come from login.
+// temporary: simulate login - GUYS THIS MUST BE REMOVED WHEN LOGIN IS IMPLEMENTED
 if (!isset($_SESSION['user_id'])) {
     $_SESSION['user_id'] = 1;
     $_SESSION['role'] = 'Admin';

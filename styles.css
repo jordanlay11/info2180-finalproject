@@ -120,6 +120,23 @@ section[id="newContact"] label {
     display: inline-block;
 }
 
+section[id="users"] select,
+section[id="users"] input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 0 10% 15px 0;
+    width: 20%;
+    display: inline-block;
+}
+
+section[id="users"] label {
+    font-weight: bold;
+    width: 15%;
+    height: 30px;
+    display: inline-block;
+}
+
 /* Table Styles */
 table {
     width: 100%;
