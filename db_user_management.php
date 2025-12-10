@@ -18,10 +18,10 @@ session_start();
 // Load configuration from environment variables
 function getDbConfig(): array {
     return [
-        'host' => getenv('DB_HOST') ?: throw new RuntimeException('DB_HOST environment variable not set'),
-        'name' => getenv('DB_NAME') ?: throw new RuntimeException('DB_NAME environment variable not set'),
-        'user' => getenv('DB_USER') ?: throw new RuntimeException('DB_USER environment variable not set'),
-        'pass' => getenv('DB_PASS') ?: throw new RuntimeException('DB_PASS environment variable not set'),
+        'host' => getenv('DB_HOST') ?: 'localhost',
+        'name' => getenv('DB_NAME') ?: 'dolphin_crm',
+        'user' => getenv('DB_USER') ?: 'root',
+        'pass' => getenv('DB_PASS') ?: '',
     ];
 }
 
