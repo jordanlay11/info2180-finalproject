@@ -11,19 +11,6 @@ This is a simple CRM (Customer Relationship Management) system built as a group 
 
 ---
 
-## Setup Instructions
-
-1. Clone or download the project folder
-2. Import the `schema.sql` file into your MySQL database
-3. Create a `.env` file or set the following environment variables in your server config:
-   - `DB_HOST`, `DB_NAME`, `DB_USER`, `DB_PASS`
-4. Start the PHP server or load through XAMPP/Localhost
-5. Default login:  
-   - **Email:** `admin@project2.com`  
-   - **Password:** `password123` *(hashed with Argon2id)*
-
----
-
 ## Team Roles & Contributions
 
 - **[Member/s A Name]**
