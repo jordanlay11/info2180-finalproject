@@ -31,7 +31,15 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
-    
+
+    const logoutLink = document.getElementById('logoutLink');
+    if (logoutLink) {
+        logoutLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.location.href = 'logout.php';
+        });
+    }
+
     const sections = document.querySelectorAll('section');
     
     const showSection = (hash) => {

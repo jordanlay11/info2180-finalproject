@@ -2,12 +2,6 @@
 declare(strict_types=1);
 require_once 'db_user_management.php';
 
-// TEMPORARY: simulate login - GUYS THIS MUST BE REMOVED WHEN LOGIN IS IMPLEMENTED
-if (!isset($_SESSION['user_id'])) {
-    $_SESSION['user_id'] = 1;
-    $_SESSION['role'] = 'Admin';
-}
-
 // Only allow logged-in users
 if (!validateSession()) {
     sendJsonResponse(['success' => false, 'message' => 'Unauthorized'], 401);
