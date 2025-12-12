@@ -1,4 +1,37 @@
 document.addEventListener('DOMContentLoaded', () => {
+
+    const loginForm = document.getElementById('loginForm');
+    if (loginForm) {
+        loginForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const formData = new FormData(loginForm);
+
+            fetch('login_api.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(res => res.json())
+            .then(result => {
+                if (result.success) {
+                    window.location.href = 'index.html';
+                } else {
+                    const errorDiv = document.getElementById('loginError');
+                    if (errorDiv) {
+                        errorDiv.textContent = result.error || 'Login failed.';
+                        errorDiv.style.display = 'block';
+                    } else {
+                        alert(result.error || 'Login failed.');
+                    }
+                }
+            })
+            .catch(err => {
+                console.error('Login error:', err);
+                alert('An error occurred while logging in.');
+            });
+        });
+    }
+    
     const sections = document.querySelectorAll('section');
     
     const showSection = (hash) => {
