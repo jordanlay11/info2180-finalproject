@@ -29,8 +29,6 @@ if ($method === 'POST') {
         sendJsonResponse(['success' => false, 'message' => 'Forbidden: Admins only'], 403);
     }
 
-    // Optional: requireValidCsrfToken();
-
     $data = [
         'firstname' => $_POST['firstname'] ?? '',
         'lastname'  => $_POST['lastname'] ?? '',
@@ -45,5 +43,4 @@ if ($method === 'POST') {
     sendJsonResponse($result, $status);
 }
 
-// ================= FALLBACK =================
 sendJsonResponse(['success' => false, 'message' => 'Method not allowed'], 405);

@@ -7,12 +7,11 @@ if (!validateSession()) {
     sendJsonResponse(['success' => false, 'message' => 'Unauthorized'], 401);
 }
 
-// Only allow JSON responses
 if ($_SERVER['REQUEST_METHOD'] !== 'GET' && $_SERVER['REQUEST_METHOD'] !== 'POST') {
     sendJsonResponse(['success' => false, 'message' => 'Method not allowed'], 405);
 }
 
-// Handle GET: list contacts
+// GET list contacts
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     $filter = $_GET['filter'] ?? 'all';
     $userId = $_SESSION['user_id'] ?? null;
@@ -25,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     ]);
 }
 
-// Handle POST: create a new contact
+// POST create a new contact
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     requireValidCsrfToken();
     $data = [
