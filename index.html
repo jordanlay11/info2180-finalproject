@@ -10,129 +10,23 @@
 </head>
 
 <body>
-    <header>
+    <header id="loginHeader">
         <img src="dolphin.jfif" alt="Dolphin Logo" id="logo">
         <h1>Dolphin CRM</h1>
     </header>
-    <aside>
-        <nav>
-            <ul>
-                <li><a href="#home"> 🏠 Home</a></li>
-                <li><a href="#newContact"> 🙍🏻‍♂️ New Contact</a></li>
-                <li><a href="#users">👨‍👨 Users</a></li>
-                <hr>
-                <li><a href="#logout">➜] Logout</a></li>
-            </ul>
-        </nav>
-    </aside>
-    <main>
-        <section id="home">
-            <h2>Dashboard</h2>
-            <button id="newContactButton">+ Add Contact</button>
-            <div id="outline">
-                <div id="contactFilter">
-                    <strong>🝖 Filter by:</strong>
-                    <ul>
-                        <li><a href="#all"> All</a></li>
-                        <li><a href="#salesLead"> Sales Lead</a></li>
-                        <li><a href="#support"> Support</a></li>
-                        <li><a href="#assignedToMe">Assigned to Me</a></li>
-                    </ul>
-                </div>
-                <div id="contactslist">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>Email</th>
-                                <th>Company</th>
-                                <th>Type</th>
-                            </tr>
-                        </thead>
-                        <tbody id="contactTableBody">
-                            <!-- Contact show here -->
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </section>
-        <section id="newContact">
-            <h2>Add New Contact</h2>
-            <div id="outline">
-                <form id="contactForm">
-                    <label for="title">Title:</label>
-                    <select id="title" name="title">
-                        <option value="mr">Mr.</option>
-                        <option value="mrs">Mrs.</option>
-                        <option value="ms">Ms.</option>
-                        <option value="dr">Dr.</option>
-                    </select>
-                    <br>
-                    <label for="firstname">First Name:</label>
-                    <input type="text" id="firstname" name="firstname" required>
-                    <label for="lastname">Last Name:</label>
-                    <input type="text" id="lastname" name="lastname" required>
-                    <br>
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
-                    <label for="telephone">Telephone:</label>
-                    <input type="tel" id="telephone" name="telephone">
-                    <br>
-                    <label for="company">Company:</label>
-                    <input type="text" id="company" name="company">
-                    <label for="type">Type:</label>
-                    <select id="type" name="type">
-                        <option value="salesLead">Sales Lead</option>
-                        <option value="support">Support</option>
-                    </select>
-                    <br>
-                    <label for="assignedTo">Assigned To:</label>
-                    <input type="text" id="assignedTo" name="assignedTo">
-                    <br>
-                    <input type="hidden" name="csrf_token" id="contact_csrf_token">
-                    <button type="submit">Save</button>
-                </form>
-            </div>
-        </section>
-        <section id="users">
-            <h2>Users</h2>
-            <div id="outline">
-                <form id="addUserForm">
-                    <h3>Add New User</h3>
-                    <label for="firstname">First Name:</label>
-                    <input type="text" name="firstname" required>
-                    <label for="lastname">Last Name:</label>
-                    <input type="text" name="lastname" required>
-                    <br>
-                    <label for="email">Email:</label>
-                    <input type="email" name="email" required>
-                    <label for="password">Password:</label>
-                    <input type="password" name="password" required>
-                    <br>
-                    <label for="role">Role:</label>
-                    <select name="role" required>
-                        <option value="Member">Member</option>
-                        <option value="Admin">Admin</option>
-                    </select>
-                    <br><br>
-                    <input type="hidden" name="csrf_token" id="csrf_token">
-                    <button type="submit">➕ Create User</button>
-                </form>
-                <hr><br>
-                <div id="userList">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>Email</th>
-                                <th>Role</th>
-                                <th>Created</th>
-                            </tr>
-                        </thead>
-                        <tbody id="userTableBody">
-                        </tbody>
-                    </table>
+    <main id="loginMain">
+        <div id="loginDiv">
+            <h2>Login to Dolphin CRM</h2>
+            <form id="loginForm">
+                <input type="email" id="username" name="email" placeholder="Email Address" required>
+                <br>
+                <input type="password" id="password" name="password" placeholder="Password" required>
+                <br>
+                <button type="submit" id="loginForm">Login</button>
+            </form>
+            <p id="Copy">Copyright © 2022 Dolphin CRM</p>
+        </div>
+    </main>
+</body>
 
-            </div>
-        </section>
 </html>

@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-
+    //Login
     const loginForm = document.getElementById('loginForm');
     if (loginForm) {
         loginForm.addEventListener('submit', (e) => {
@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(res => res.json())
             .then(result => {
                 if (result.success) {
-                    window.location.href = 'index.html';
+                    window.location.href = 'dashboard.html';
                 } else {
                     const errorDiv = document.getElementById('loginError');
                     if (errorDiv) {
@@ -32,6 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    //Logout
     const logoutLink = document.getElementById('logoutLink');
     if (logoutLink) {
         logoutLink.addEventListener('click', (e) => {
@@ -40,6 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    //Navigate HTML sections
     const sections = document.querySelectorAll('section');
     
     const showSection = (hash) => {
@@ -93,6 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <td>${c.email}</td>
                         <td>${c.company || ''}</td>
                         <td>${c.type}</td>
+                        <td><a href="dashboard.html#viewUser" id="viewContactInfo">View</a></td>
                     </tr>
                 `).join('');
             })

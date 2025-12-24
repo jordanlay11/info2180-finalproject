@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dolphin CRM</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div id="mainDiv">
+        <header id="dashboardHeader">
+            <img src="dolphin.jfif" alt="Dolphin Logo" id="logo">
+            <h1>Dolphin CRM</h1>
+        </header>
+        <aside>
+            <nav>
+                <ul>
+                    <li><a href="#home"> 🏠 Home</a></li>
+                    <li><a href="#newContact"> 🙍🏻‍♂️ New Contact</a></li>
+                    <li><a href="#users">👨‍👨 Users</a></li>
+                    <hr>
+                    <li id="logoutLink">➜] Logout</button>
+                </ul>
+            </nav>
+        </aside>
+        <main id="dashboardMain">
+            <section id="home">
+                <div id="flexright">
+                    <h2>Dashboard</h2>
+                    <button id="newContactButton"><a href="#newContact">+ Add Contact</a></button>
+                </div>
+                <div id="outline">
+                    <div id="contactFilter">
+                        <strong>🝖 Filter by:</strong>
+                        <ul>
+                            <li><a href="#all"> All</a></li>
+                            <li><a href="#salesLead"> Sales Lead</a></li>
+                            <li><a href="#support"> Support</a></li>
+                            <li><a href="#assignedToMe">Assigned to Me</a></li>
+                        </ul>
+                    </div>
+                    <div id="contactslist">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Company</th>
+                                    <th>Type</th>
+                                    <th> </th>
+                                </tr>
+                            </thead>
+                            <tbody id="contactTableBody">
+                                <!-- Contact show here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+            <section id="viewUser">
+                <div id="flexright">
+                    <img src="userlogo.jpg" alt="User Logo" id="userLogo">
+                    <div id="intro">
+                        <h2>name</h2>
+                        <p>Created on </p>
+                        <p>Updated on </p>
+                    </div>
+                    <div id="alignRight">
+                        <button id="assignToME">Assign to Me</button>
+                        <button id="switchTo">⇄ Switch to</button>
+                    </div>
+                </div>
+                <div id="outline">
+                    <div id="flexright">
+                        <div id="leftInfo">
+                            <p><strong>Email</strong></p>
+                            <p>name.com</p>
+                            <br>
+                            <p><strong>Company</strong></p>
+                            <p>comp</p>
+                        </div>
+                        <div id="leftInfo">
+                            <p><strong>Telephone</strong></p>
+                            <p>telle</p>
+                            <br>
+                            <p><strong>Assigned To</strong></p>
+                            <p>me</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="outline">
+                    <h2>📝 Notes</h2>
+                    <hr>
+                    <div id="notesList">
+                        <!-- Notes show here -->
+                    </div>
+                    <form id="addNote">
+                        <h3>Add a note about</h3>
+                        <textarea id="noteContent" name="noteContent" rows="4" cols="50"
+                            placeholder="Enter details here"></textarea>
+                        <br>
+                        <button type="submit" id="addNoteButton">Add Note</button>
+                    </form>
+                </div>
+            </section>
+            <section id="newContact">
+                <h2>Add New Contact</h2>
+                <div id="outline">
+                    <form id="contactForm">
+                        <label for="title">Title:</label>
+                        <select id="title" name="title">
+                            <option value="mr">Mr.</option>
+                            <option value="mrs">Mrs.</option>
+                            <option value="ms">Ms.</option>
+                            <option value="dr">Dr.</option>
+                        </select>
+                        <br>
+                        <label for="firstname">First Name:</label>
+                        <input type="text" id="firstname" name="firstname" required>
+                        <label for="lastname">Last Name:</label>
+                        <input type="text" id="lastname" name="lastname" required>
+                        <br>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                        <label for="telephone">Telephone:</label>
+                        <input type="tel" id="telephone" name="telephone">
+                        <br>
+                        <label for="company">Company:</label>
+                        <input type="text" id="company" name="company">
+                        <label for="type">Type:</label>
+                        <select id="type" name="type">
+                            <option value="salesLead">Sales Lead</option>
+                            <option value="support">Support</option>
+                        </select>
+                        <br>
+                        <label for="assignedTo">Assigned To:</label>
+                        <input type="text" id="assignedTo" name="assignedTo">
+                        <br>
+                        <input type="hidden" name="csrf_token" id="contact_csrf_token">
+                        <button id="submit" type="submit">Save</button>
+                    </form>
+                </div>
+            </section>
+            <section id="users">
+                <h2>Users</h2>
+                <div id="outline">
+                    <form id="addUserForm">
+                        <h3>Add New User</h3>
+                        <label for="firstname">First Name:</label>
+                        <input type="text" name="firstname" required>
+                        <label for="lastname">Last Name:</label>
+                        <input type="text" name="lastname" required>
+                        <br>
+                        <label for="email">Email:</label>
+                        <input type="email" name="email" required>
+                        <label for="password">Password:</label>
+                        <input type="password" name="password" required>
+                        <br>
+                        <label for="role">Role:</label>
+                        <select name="role" required>
+                            <option value="Member">Member</option>
+                            <option value="Admin">Admin</option>
+                        </select>
+                        <br><br>
+                        <input type="hidden" name="csrf_token" id="csrf_token">
+                        <button type="submit">+ Create User</button>
+                    </form>
+                    <hr><br>
+                    <div id="userList">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Role</th>
+                                    <th>Created</th>
+                                </tr>
+                            </thead>
+                            <tbody id="userTableBody">
+                            </tbody>
+                        </table>
+
+                    </div>
+            </section>
+        </main>
+    </div>
+
+</html>

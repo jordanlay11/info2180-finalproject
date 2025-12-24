@@ -2,13 +2,74 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+/*Login Page*/
+#loginBody {
+    height: 100vh;
+    width: 100vw;
+    background-color: lightgray;
+}
+
+#loginHeader {
+    background-color: #02021E;
+    color: whitesmoke;
+    padding: 20px;
+    display: flex;
+    width: 100%;
+}
+
+#loginMain {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 80px);
+    width: 100%;
+    padding: 0;
+}
+
+#loginDiv {
+    background-color: aliceblue;
+    display: block;
+    max-width: 420px;
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+#loginDiv input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 0 0 15px 0;
+    width: 100%;
+    display: block;
+    box-sizing: border-box;
+}
+
+#Copy {
+    margin-top: 20px;
+    font-size: 0.8em;
+    color: #b1aeae;
+}
+
+/* Dashboard */
+#mainDiv {
     display: grid;
     grid-template-rows: 10vh minmax(80vh, auto);
     grid-template-columns: 20vw 80vw;
+    min-height: 100vh;
 }
 
-/* Header */
-header {
+#dashboardHeader {
     background-color: #02021E;
     color: whitesmoke;
     padding: 20px;
@@ -52,7 +113,7 @@ a {
 }
 
 /* Main */
-main {
+#dashboardMain {
     background-color: lightgray;
     grid-column: 2;
     grid-row: 2;
@@ -60,7 +121,7 @@ main {
 }
 
 button {
-    background-color: #02021E;
+    background-color: #6868f7;
     color: whitesmoke;
     border-radius: 5px;
     padding: 10px 20px;
@@ -72,6 +133,7 @@ button {
     border-radius: 5px;
     padding: 10px;
     background-color: aliceblue;
+    ;
 }
 
 /*home section*/
@@ -102,24 +164,62 @@ button {
     color: blue
 }
 
-/* New Contact Section */
-section[id="newContact"] select,
-section[id="newContact"] input {
+#newContactButton {
+    margin-left: auto;
+    height: 40px;
+}
+
+/* View User */
+#flexright {
+    display: flex;
+    justify-content: space-between;
+    align-self: start;
+
+}
+
+#intro {
+    line-height: 5px;
+}
+
+#userLogo {
+    border-radius: 50%;
+    width: 8%;
+    height: 8%;
+}
+
+#alignRight {
+    margin-left: auto;
+    margin-top: auto;
+}
+
+#assignToME {
+    background-color: rgb(73, 179, 73);
+}
+
+#switchTo {
+    background-color: rgb(236, 171, 50);
+}
+
+#leftInfo {
+    width: 50%;
+}
+
+form[id="addNote"] {
+    background-color: #aaa6a6;
+    padding: 2px 10px 10px 10px;
+}
+
+textarea {
+    width: 98%;
+    height: 150px;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    margin: 0 10% 15px 0;
-    width: 20%;
-    display: inline-block;
 }
 
-section[id="newContact"] label {
-    font-weight: bold;
-    width: 15%;
-    height: 30px;
-    display: inline-block;
-}
-
+/* New Contact and user Section */
+section[id="newContact"] select,
+section[id="newContact"] input,
 section[id="users"] select,
 section[id="users"] input {
     padding: 10px;
@@ -130,6 +230,7 @@ section[id="users"] input {
     display: inline-block;
 }
 
+section[id="newContact"] label,
 section[id="users"] label {
     font-weight: bold;
     width: 15%;
@@ -149,9 +250,17 @@ thead {
     color: whitesmoke;
 }
 
+th {
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
 th,
 td {
     padding: 10px;
-    border: 1px solid #02021E;
     text-align: left;
+}
+
+#viewContactInfo {
+    color: blue;
 }
