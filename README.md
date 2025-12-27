@@ -13,8 +13,8 @@ This is a simple CRM (Customer Relationship Management) system built as a group 
 
 ## Team Roles & Contributions
 
-- **Jordan Laylor**
-  - HTML, CSS, View Cantact Page, Notes
+- **[Member/s A Name]**
+  - 
 
 - **[Member/s B Name]**
   - 
