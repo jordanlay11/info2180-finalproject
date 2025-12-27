@@ -5,15 +5,17 @@ declare(strict_types=1);
 
 // Secure session configuration - must be called before session_start()
 function configureSecureSession(): void {
-    ini_set('session. cookie_httponly', '1');
-    ini_set('session. cookie_secure', '1');
-    ini_set('session. cookie_samesite', 'Strict');
+    ini_set('session.cookie_httponly', '1');
+    ini_set('session.cookie_secure', '1');
+    ini_set('session.cookie_samesite', 'Strict');
     ini_set('session.use_only_cookies', '1');
     ini_set('session.gc_maxlifetime', '1800'); // 30 minutes
 }
 
-configureSecureSession();
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    configureSecureSession();
+    session_start();
+}
 
 // Load configuration from environment variables
 function getDbConfig(): array {
@@ -287,7 +289,7 @@ function getAllUsers(): array {
     try {
         $db = getDB();
         $stmt = $db->query("SELECT id, firstname, lastname, email, role, created_at FROM users ORDER BY created_at DESC");
-        return $stmt->fetchAll();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     } catch (PDOException $e) {
         error_log("Get all users error: " .  $e->getMessage());
         return [];

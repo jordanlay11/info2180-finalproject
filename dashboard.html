@@ -132,12 +132,13 @@
                         <input type="text" id="company" name="company">
                         <label for="type">Type:</label>
                         <select id="type" name="type">
-                            <option value="salesLead">Sales Lead</option>
-                            <option value="support">Support</option>
+                            <option value="sales Lead">Sales Lead</option>
+                            <option value="Support">Support</option>
                         </select>
                         <br>
-                        <label for="assignedTo">Assigned To:</label>
-                        <input type="text" id="assignedTo" name="assignedTo">
+                        <label for="assigned-to">Assigned To:</label>
+                        <select id="assigned-to" name="assignedTo" required>
+                        </select>
                         <br>
                         <input type="hidden" name="csrf_token" id="contact_csrf_token">
                         <button id="submit" type="submit">Save</button>

@@ -11,15 +11,22 @@ $method = $_SERVER['REQUEST_METHOD'];
 
 // GET USERS 
 if ($method === 'GET') {
-    if (!isAdmin()) {
-        sendJsonResponse(['success' => false, 'message' => 'Forbidden: Admins only'], 403);
-    }
-
     $users = getAllUsers();
+
+    $cleanedUsers = array_map(function($u){
+        return [
+            'id' => $u['id'],
+            'firstname' => $u['firstname'],
+            'lastname' => $u['lastname'],
+            'email' => $u['email'],
+            'role' => $u['role'],
+            'created_at' => $u['created_at']
+        ];
+    }, $users);
 
     sendJsonResponse([
         'success' => true,
-        'data' => $users
+        'data' => $cleanedUsers
     ]);
 }
 

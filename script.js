@@ -219,5 +219,34 @@ document.addEventListener('DOMContentLoaded', () => {
             alert('Error creating user.');
         });
     });
+    
+    function populateAssignedToDropdown() {
+        fetch('users_api.php')
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    const dropdown = document.getElementById('assigned-to');
+                    dropdown.innerHTML = '';
+
+                    const defaultOption = document.createElement('option');
+                    defaultOption.value = '';
+                    defaultOption.textContent = '-- Select User --';
+                    dropdown.appendChild(defaultOption);
+
+                    data.data.forEach(user => {
+                        const option = document.createElement('option');
+                        option.value = user.id;
+                        option.textContent = `${user.firstname} ${user.lastname}`;
+                        dropdown.appendChild(option);
+                    });
+                } else {
+                    console.error('Failed to load users:', data.message);
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching users:', error);
+            });
+    }
     loadUsers();
+    populateAssignedToDropdown();
 });
