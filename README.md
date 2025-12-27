@@ -13,14 +13,15 @@ This is a simple CRM (Customer Relationship Management) system built as a group 
 
 ## Team Roles & Contributions
 
-- **[Member/s A Name]**
-  - 
+- **[Jordan Laylor]**
+  - HTML, CSS, View Contact, Notes
 
 - **[Member/s B Name]**
   - 
 
-- **[Member/s C Name]**
-  - 
+- **Ravaughn Marsh**
+  - Built the centralized PHP backend (db_user_management.php)
+    that acts as the core logic and gateway for all API requests.
 
 - **Tramonique Wellington**
   - Developed AJAX logic and JavaScript integration
