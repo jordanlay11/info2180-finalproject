@@ -43,6 +43,12 @@ if ($method === 'POST') {
     }
 
     switch ($action) {
+        case 'assign_me':
+            // assign to currently logged-in user
+            $assignedUser = $_SESSION['user_id'] ?? null;
+            $result = updateContactAssignment($contactId, $assignedUser);
+            break;
+
         case 'assign':
             $assignedTo = isset($_POST['assigned_to']) ? (int) $_POST['assigned_to'] : null;
             $result = updateContactAssignment($contactId, $assignedTo);

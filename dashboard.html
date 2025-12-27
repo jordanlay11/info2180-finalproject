@@ -64,9 +64,9 @@
                 <div id="flexright">
                     <img src="userlogo.jpg" alt="User Logo" id="userLogo">
                     <div id="intro">
-                        <h2>name</h2>
-                        <p>Created on </p>
-                        <p>Updated on </p>
+                        <h2 id="contactName">name</h2>
+                        <p id="createdOn">Created on </p>
+                        <p id="updatedOn">Updated on </p>
                     </div>
                     <div id="alignRight">
                         <button id="assignToME">Assign to Me</button>
@@ -77,26 +77,27 @@
                     <div id="flexright">
                         <div id="leftInfo">
                             <p><strong>Email</strong></p>
-                            <p>name.com</p>
+                            <p id="contactEmail">GO BACK TO HOME AND SELECT CONTACT</p>
                             <br>
                             <p><strong>Company</strong></p>
-                            <p>comp</p>
+                            <p id="contactCompany">GO BACK TO HOME AND SELECT CONTACT</p>
                         </div>
                         <div id="leftInfo">
                             <p><strong>Telephone</strong></p>
-                            <p>telle</p>
+                            <p id="contactTelephone">GO BACK TO HOME AND SELECT CONTACT</p>
                             <br>
                             <p><strong>Assigned To</strong></p>
-                            <p>me</p>
+                            <p id="contactAssignedTo">GO BACK TO HOME AND SELECT CONTACT</p>
                         </div>
                     </div>
                 </div>
                 <div id="outline">
                     <h2>📝 Notes</h2>
-                    <hr>
+
                     <div id="notesList">
                         <!-- Notes show here -->
                     </div>
+                    <hr>
                     <form id="addNote">
                         <h3>Add a note about</h3>
                         <textarea id="noteContent" name="noteContent" rows="4" cols="50"
@@ -132,7 +133,7 @@
                         <input type="text" id="company" name="company">
                         <label for="type">Type:</label>
                         <select id="type" name="type">
-                            <option value="sales Lead">Sales Lead</option>
+                            <option value="Sales Lead">Sales Lead</option>
                             <option value="Support">Support</option>
                         </select>
                         <br>

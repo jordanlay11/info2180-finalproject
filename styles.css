@@ -169,6 +169,11 @@ button {
     height: 40px;
 }
 
+a[class='viewContact'] {
+    color: blue;
+    cursor: pointer;
+}
+
 /* View User */
 #flexright {
     display: flex;
@@ -263,4 +268,48 @@ td {
 
 #viewContactInfo {
     color: blue;
+}
+
+/* Notes */
+.noteItem {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    padding: 10px;
+    margin-bottom: 12px;
+    border-radius: 6px;
+}
+
+.noteMeta {
+    color: #666666;
+    font-size: 0.9em;
+    margin-top: 8px;
+}
+
+/* Type(support, sales lead) color in contact list */
+.contact-type {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 12px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+.type-sales {
+    background: #f39c12;
+}
+
+.type-support {
+    background: #3498db
+}
+
+/* Switch button color */
+.btn-sales {
+    background-color: #f39c12 !important;
+    color: #fff;
+}
+
+.btn-support {
+    background-color: #3498db !important;
+    color: #fff;
 }
