@@ -149,7 +149,10 @@
             <section id="users">
                 <h2>Users</h2>
                 <div id="outline">
-                    <form id="addUserForm">
+                    <form id="addUserForm" autocomplete="off">
+                        <!-- Prevent browser autofill by providing hidden username/password fields first -->
+                        <input type="text" name="fake-username" id="fake-username" style="display:none" autocomplete="username">
+                        <input type="password" name="fake-password" id="fake-password" style="display:none" autocomplete="current-password">
                         <h3>Add New User</h3>
                         <label for="firstname">First Name:</label>
                         <input type="text" name="firstname" required>
@@ -157,9 +160,9 @@
                         <input type="text" name="lastname" required>
                         <br>
                         <label for="email">Email:</label>
-                        <input type="email" name="email" required>
+                        <input type="email" name="email" required autocomplete="off">
                         <label for="password">Password:</label>
-                        <input type="password" name="password" required>
+                        <input type="password" name="password" required autocomplete="new-password">
                         <br>
                         <label for="role">Role:</label>
                         <select name="role" required>
