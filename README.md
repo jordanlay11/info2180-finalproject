@@ -16,8 +16,8 @@ This is a simple CRM (Customer Relationship Management) system built as a group 
 - **Jordan Laylor**
   - HTML, CSS, View Contact, Notes
 
-- **[Member/s B Name]**
-  - 
+- **Nyishia Robinson**
+  - Developed "schema.sql" and hashed password for user safety.
 
 - **Ravaughn Marsh**
   - Built the centralized PHP backend (db_user_management.php)
