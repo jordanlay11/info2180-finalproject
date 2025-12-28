@@ -31,6 +31,3 @@ This is a simple CRM (Customer Relationship Management) system built as a group 
   - Ensured dynamic content loading and real-time form submissions
 
 ---
-
-## Developer Notes
-
